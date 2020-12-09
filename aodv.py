@@ -123,13 +123,13 @@ class aodv(threading.Thread):
     
     # Send a message
     def aodv_send(self, destination, destination_port, message):
-        print("ALERT ====================")
+        print("ALERT 22222222222222")
         try:
             message_bytes = bytes(message, 'utf-8')
             detination_ip = get_aodv_ip(destination)
             self.aodv_sock.sendto(message_bytes, 0, 
                                   (detination_ip, destination_port))
-            print("ALERT ====================")
+            print("ALERT 33333333333333")
             print("send to ",detination_ip, str(destination_port) )#########
         except:
             pass    
@@ -709,7 +709,7 @@ class aodv(threading.Thread):
                     
     # Send a message to a peer
     def aodv_send_message(self, from_tester):
-        print("ALERT ====================")
+        print("ALERT 00000000000000")
         # Get the command sent by the listener thread / tester process
         command = self.command
         if (from_tester == False):
@@ -736,7 +736,7 @@ class aodv(threading.Thread):
             else:
                 next_hop = destination['Next-Hop']
                 next_hop_port = destination['Next-Hop-Port']
-                print("ALERT ====================")
+                print("ALERT 11111111")
                 self.aodv_send(next_hop, int(next_hop_port), message)
                 # TODO: update lifetime here as the route was used
                 self.aodv_restart_route_timer(destination, False)
