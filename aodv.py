@@ -83,7 +83,7 @@ class aodv(threading.Thread):
                 'n4':  33340,
                 'n5':  33350}['n'+str(node)]
                 
-        # return port
+        return port
 
      # Get the port associated with sending and receiving AODV messages
     def get_aodv_ip(self, node):
