@@ -76,17 +76,17 @@ class aodv(threading.Thread):
 
     # Get the port associated with sending and receiving AODV messages
     def get_aodv_port(self, node):
-        return 33300
-        # port = {'n1':  3000,
-        #         'n2':  3100,
-        #         'n3':  3200,
-        #         'n4':  3300,
-        #         'n5':  3400,
-        #         'n6':  3500,
-        #         'n7':  3600,
-        #         'n8':  3700,
-        #         'n9':  3800,
-        #         'n10': 3900}['n'+str(node)]
+        # return 33300
+        port = {'n1':  3000,
+                'n2':  3100,
+                'n3':  3200,
+                'n4':  3300,
+                'n5':  3400,
+                'n6':  3500,
+                'n7':  3600,
+                'n8':  3700,
+                'n9':  3800,
+                'n10': 3900}['n'+str(node)]
                 
         # return port
 
@@ -133,6 +133,7 @@ class aodv(threading.Thread):
             detination_ip = get_aodv_ip(destination)
             self.aodv_sock.sendto(message_bytes, 0, 
                                   (detination_ip, destination_port))
+            print("send to ",detination_ip, str(destination_port) )#########
         except:
             pass    
     
