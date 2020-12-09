@@ -126,8 +126,8 @@ class aodv(threading.Thread):
         try:
             print("in to try")
             message_bytes = bytes(message, 'utf-8')
-            print("message_bytes")
-            destination_ip = get_aodv_ip(destination)
+            print(message_bytes)
+            destination_ip = self.get_aodv_ip(destination)
             print(destination_ip)
             self.aodv_sock.sendto(message_bytes, 0, 
                                   (destination_ip, destination_port))
