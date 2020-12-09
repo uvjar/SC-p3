@@ -124,7 +124,9 @@ class aodv(threading.Thread):
     # Send a message
     def aodv_send(self, destination, destination_port, message):
         try:
+            print("in to try")
             message_bytes = bytes(message, 'utf-8')
+            print("message_bytes")
             destination_ip = get_aodv_ip(destination)
             print(destination_ip)
             self.aodv_sock.sendto(message_bytes, 0, 
@@ -132,7 +134,6 @@ class aodv(threading.Thread):
             print("ALERT 33333333333333")
             print("send to ",destination_ip, str(destination_port) )#########
         except:
-            print("ALERT passsssssssssss")
             pass    
     
     # Send the hello message to all the neighbors
